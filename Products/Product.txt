@@ -1,3 +1,0 @@
-Apple               	20    		100
-Banana              	10    		120
-Pencil              	5     		200
