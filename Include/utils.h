@@ -11,7 +11,7 @@
 #include "./error.h"
 #include <ctime>
 #include <cstdlib>
-#include<limits>
+#include <limits>
 using namespace std;
 
 //
@@ -881,12 +881,12 @@ void PurchaseProduct()
             cout << "Enter the product number you want to purchase: ";
             cin >> Number;
 
-            if (cin.fail() || Number < 1 || Number > Products.size())
+            if ( Number < 1 || Number > Products.size() || Products[Number - 1].GetQty() == 0 )
             {
                 CustomMessage("Invalid product number...!");
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Clear the buffer
-                Number = 0; // Reset invalid input
+                Number = 0;                                          // Reset invalid input
             }
         } while (Number < 1 || Number > Products.size());
 
@@ -903,7 +903,7 @@ void PurchaseProduct()
                 CustomMessage("Invalid input for quantity...!");
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Clear invalid input
-                Qty = 0; // Reset invalid input
+                Qty = 0;                                             // Reset invalid input
             }
             else if (Qty < 1)
             {
@@ -932,7 +932,7 @@ void PurchaseProduct()
         cin >> Flag;
         Flag = tolower(Flag); // Convert to lowercase for consistency
 
-    } while (Flag == 'y' || Flag =='Y');
+    } while (Flag == 'y' || Flag == 'Y');
 
     // Update the product list and generate a bill for the purchases
     AddProduct(Products);
@@ -1224,8 +1224,10 @@ void GenerateBill(vector<Product> &Purchases)
     cout << "Enter Name : ";
     cin >> CustomerName;
 
-    cout << "Enter Contact : ";
-    cin >> CustomerContact;
+    do{
+        cout << "Enter Contact : ";
+        cin >> CustomerContact;
+    }while(!IsValidContact(CustomerContact));
 
     Bill << "=============================================================" << endl;
     Bill << "------------------------- A-Z Store -------------------------" << endl;
@@ -1241,7 +1243,8 @@ void GenerateBill(vector<Product> &Purchases)
     Bill << left;
     Bill << setw(3) << "No." << "\t" << setw(20) << "Product" << "\t" << setw(10) << "Price" << "\t" << setw(10) << "Qty" << "\t" << setw(9) << "Total" << endl;
     Bill << "=============================================================" << endl;
-    for (int i = 0; i < Purchases.size(); ++i){
+    for (int i = 0; i < Purchases.size(); ++i)
+    {
         TotalPrice += (Purchases[i].GetPrice() * Purchases[i].GetQty());
         Bill << setw(3) << (i + 1) << "\t" << setw(20) << Purchases[i].Getname() << "\t" << setw(10) << Purchases[i].GetPrice() << "\t" << setw(10) << Purchases[i].GetQty() << "\t" << setw(9) << (Purchases[i].GetPrice() * Purchases[i].GetQty()) << endl;
     }

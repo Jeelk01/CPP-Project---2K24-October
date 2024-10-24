@@ -2,5 +2,7 @@
     Banana	    10	120	
     Pencil	     6	100	
       Book	   200	  0	
-  LunchBox	   350	 50	
-PaperSheets	    10	  3	
+  LunchBox	   500	 48	
+PaperSheets	    10	  1	
+ Chocolate	    10	400	
+WaterBottle	  2000	 20	
