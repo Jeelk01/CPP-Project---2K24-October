@@ -1,4 +1,4 @@
-     Apple	    25	164	
+     Apple	    25	162	
     Banana	    10	120	
     Pencil	     6	100	
       Book	   200	  0	
