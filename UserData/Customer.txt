@@ -1,6 +1,0 @@
-Keel01  	Keel01  	Jeel                	M    	2323989889	
-Kirtan11	Kirtan11	Kirtan              	M    	2134657809	
-Jeel01  	Jeel01  	Jeel01              	M    	9898676700	
-dev     	dev     	dev                 	M    	1234567890	
-Vivek01 	Vivek01 	Vivek               	M    	1234567890	
-p@123   	p@123   	prince              	M    	9898989890	

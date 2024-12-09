@@ -1,8 +1,8 @@
-     Apple	    25	162	
+     Apple	    25	152	
     Banana	    10	120	
     Pencil	     6	100	
       Book	   200	  0	
   LunchBox	   500	 48	
 PaperSheets	    10	  1	
  Chocolate	    10	400	
-WaterBottle	  2000	 20	
+WaterBottle	  2000	 18	
